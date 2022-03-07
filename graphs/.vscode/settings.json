@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    ".sequelizerc": "javascript",
+    ".stylelintrc": "json",
+    ".prettierrc": "json",
+    "*.tsx": "typescriptreact",
+    "utility": "cpp",
+    "vector": "cpp",
+    "memory": "cpp"
+  }
+}

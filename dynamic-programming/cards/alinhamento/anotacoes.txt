@@ -1,0 +1,81 @@
+
+
+
+stop      >> string 1
+sto      >> string 2
+       
+
+ocurrance
+occurrence
+                                                                                  (a,e)
+o-currance         > 1) criar um gap !, 2) troca de 'a' por 'e' M=(1,1), (2,3)....(6,7)
+occurrence          
+
+
+o-curr-ance        > 1) criacao de 3 gaps... M = ()
+occurre-nce
+
+
+a primeira opcao só será otima se gap + troca < 3 gaps !!!!!!
+
+
+1970 >>>  NeedleMan e Wunsch.... alinhamento com objetivo de quantificar a similaridade entre
+strings..
+
+X = x1,x2, ... , xm     posicao (1,2,..., m)
+Y = y1,y2, ... , yn     posicao (1,2,,.., n)
+
+MAtching > conjunto de pares ordenados em que cada simbolo ocorre em no maximo um par.
+dizemos que um matching M está alinhado se não há pares cruzados: (i,j) e (i', j') pertecem
+a M   EEEEE     i < i' e j < j'
+                                               s,s         p,p
+stop      M = {(2,1),(3,2),(4,3)}    >>>>>>   (1,4), .... (4,3)
+ tops
+ 
+
+Qual o alinhamento OTIMO???
+
+1) seja DELTA um 'custo' associado à criacao de um GAP. para cada posicao de X e Y
+que nao tem matching em M, aplica-se uma penalidade DELTA.
+
+2) ALPHA(p,q), onde p e q sao letras alfabeto... haverá um mismatching de custo ALPHA(p,q)
+para alinhar p com q, para cada (i,j) em M.. ALPHA(p,p) = 0 ...
+
+
+NO alinhamento OTIMO M, OU (m,n) pertence OU (m,n) NAO pertence a M
+
+
+Se (m,n) NAO pertence M, a m-esima posicao de X OU a n-esima posicao de Y não tem
+matching em M   !!!!!!!!
+
+a) (m,n) pertence a M
+b) m-esima posicao de X nao tem matching em M
+c) n-esima posicao de Y nao tem matching em M
+
+opt(i,j) = custo minimo de alinhamento
+
+a) opt(i,j) = ALPHA(xi,yj) + opt(i-1,j-1)
+b) opt(i,j) = DELTA + opt(i-1,j)
+c) opt(i,j) = DELTA + opt(i,j-1)
+
+
+opt(i,j) = MIN(ALPHA(xi,yj) + opt(i-1,j-1), DELTA + opt(i-1,j), DELTA + opt(i,j-1))
+
+
+string1 = "o  "       i = 1 , 0
+string2 = "ola"       j = 3, 2
+
+
+p
+o
+t
+s
+  t o p s
+
+
+  str1 = "s "
+  str2 = "to"
+
+
+  mean
+  n ame
